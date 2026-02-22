@@ -11,6 +11,12 @@ public class List {
         return size;
     }
 
+    // זה החלק שהיה חסר והפיל את הטסטים
+    public CharData getFirst() {
+        if (first == null) return null;
+        return first.cp;
+    }
+
     public void addFirst(char chr) {
         Node newNode = new Node(new CharData(chr));
         newNode.next = first;
@@ -22,7 +28,7 @@ public class List {
         Node current = first;
         int i = 0;
         while (current != null) {
-            if (current.cp.chr == chr) { // התיקון הקריטי כאן
+            if (current.cp.chr == chr) {
                 return i;
             }
             current = current.next;
